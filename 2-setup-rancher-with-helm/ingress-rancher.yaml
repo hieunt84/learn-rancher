@@ -1,0 +1,67 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/issuer: rancher
+    cert-manager.io/issuer-kind: Issuer
+    meta.helm.sh/release-name: rancher
+    meta.helm.sh/release-namespace: cattle-system
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+  creationTimestamp: "2021-06-17T08:20:21Z"
+  generation: 1
+  labels:
+    app: rancher
+    app.kubernetes.io/managed-by: Helm
+    chart: rancher-2.5.8
+    heritage: Helm
+    release: rancher
+  managedFields:
+  - apiVersion: networking.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:cert-manager.io/issuer: {}
+          f:cert-manager.io/issuer-kind: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+          f:nginx.ingress.kubernetes.io/proxy-connect-timeout: {}
+          f:nginx.ingress.kubernetes.io/proxy-read-timeout: {}
+          f:nginx.ingress.kubernetes.io/proxy-send-timeout: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:heritage: {}
+          f:release: {}
+      f:spec:
+        f:rules: {}
+        f:tls: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-06-17T08:20:21Z"
+  name: rancher
+  namespace: cattle-system
+  resourceVersion: "1705"
+  uid: bf422e61-38a8-4539-aad9-658d28d43d86
+spec:
+  rules:
+  - host: rancher.my.org
+    http:
+      paths:
+      - backend:
+          service:
+            name: rancher
+            port:
+              number: 80
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - rancher.my.org
+    secretName: tls-rancher-ingress
+status:
+  loadBalancer: {}
