@@ -24,7 +24,7 @@
     -...    
 
 ### Overview Rancher
-<p align="center"><img src="https://github.com/hieunt84/learn-k8s/blob/master/rancher/images/overview-ancher.PNG" /></p>
+<p align="center"><img src="https://github.com/hieunt84/learn-rancher/blob/master/images/overview-ancher.png" /></p>
     
 ### Similar softwares:
     -Ref:https://www.gartner.com/reviews/market/cloud-management-platforms/vendor/rancher/product/rancher/alternatives
